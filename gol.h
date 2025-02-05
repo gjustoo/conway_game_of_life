@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <SDL2/SDL.h>
 #include <unistd.h>
+#include <stdbool.h>
+#include <SDL2/SDL_ttf.h>
 
 #define grid_cell_size 10
 #define grid_width 100
@@ -12,11 +14,11 @@
 struct cell
 {
     SDL_Rect grid_cursor; // cell_grid properties
-    int alive;            // !0 if alive
+    bool alive;            // !0 if alive
     int next_alive;       // next generation alive state
 };
 typedef struct cell cell;
-
+void move_to_right(cell matrix[grid_height][grid_width],int);
 void check_generation(cell matrix[grid_height][grid_width]);
 
-void update_alive_states(cell matrix[grid_height][grid_width]);
+int update_alive_states(cell matrix[grid_height][grid_width]);
