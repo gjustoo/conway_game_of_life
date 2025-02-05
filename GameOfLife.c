@@ -149,14 +149,13 @@ int main(int argc, char **argv)
             // TODO: render stats on screen
             alive_cells = update_alive_states(cell_matrix);
             gen++;
-            SDL_Delay(500);
+            SDL_Delay(250);
         }
     }
 
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
-    TTF_Quit();
     return 0;
 }
 
